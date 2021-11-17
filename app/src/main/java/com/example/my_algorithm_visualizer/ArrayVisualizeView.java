@@ -95,6 +95,9 @@ public class ArrayVisualizeView extends View {
         initRects(arr);
     }
 
+    public void reset(){
+        shapes.clear();
+    }
 
 
     private void deleteCanvasContent(Canvas canvas){

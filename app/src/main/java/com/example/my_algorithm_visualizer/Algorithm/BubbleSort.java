@@ -13,7 +13,7 @@ public class BubbleSort extends Sort{
 
     @Override
     public void sort(ArrayVisualizeView view, long timeDelay) {
-        currentStatus = ArrayStatus.SORTING;
+        setCurrentStatus(ArrayStatus.SORTING);
         int n = intArray.length;
         for (int i = 0; i < n-1; i++){
             view.focusRect(i);
@@ -34,7 +34,7 @@ public class BubbleSort extends Sort{
             }
             view.unfocusRect(i);
         }
-        currentStatus = ArrayStatus.SORTED;
+        setCurrentStatus(ArrayStatus.SORTED);
 
 
 

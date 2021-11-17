@@ -5,4 +5,7 @@
     <string name="shuffle">Shuffle</string>
     <string name="sort">Sort</string>
     <string name="array_start_size">10</string>
+    <string name="Bubble_sort">Bubble sort</string>
+    <string name="Selection_sort">Selection sort</string>
+    <string name="Cocktail_sort">Cocktail sort</string>
 </resources>

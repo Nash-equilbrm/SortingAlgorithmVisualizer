@@ -12,10 +12,7 @@ public abstract class Sort {
     private Context context;
     protected int[] intArray;
     private long comparisonsCount=0;
-
-
-
-    protected ArrayStatus currentStatus = ArrayStatus.NOT_SORTED;
+    private ArrayStatus currentStatus = ArrayStatus.NOT_SORTED;
 
 
     public Sort(Context context){
@@ -47,6 +44,12 @@ public abstract class Sort {
         return intArray;
     }
 
+    public void setArr(int[] arr){
+        intArray = new int[arr.length];
+        for(int i=0;i<arr.length;++i){
+            intArray[i]=arr[i];
+        }
+    }
 
     public void randomArray(int limit) {
         Random rd = new Random();

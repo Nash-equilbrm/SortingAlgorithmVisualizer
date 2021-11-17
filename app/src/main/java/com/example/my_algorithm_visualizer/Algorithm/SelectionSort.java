@@ -12,7 +12,7 @@ public class SelectionSort extends Sort{
 
     @Override
     public void sort(ArrayVisualizeView view, long timeDelay) {
-        currentStatus = ArrayStatus.SORTING;
+        setCurrentStatus(ArrayStatus.SORTING);
 
 
         int n = intArray.length;
@@ -44,7 +44,7 @@ public class SelectionSort extends Sort{
 
         }
 
-        currentStatus = ArrayStatus.SORTED;
+        setCurrentStatus(ArrayStatus.SORTED);
 
     }
 }
