@@ -104,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
                 comparisonCountDisplay.setText(String.valueOf(sortAlgorithm.getComparisonsCount()));
                 handler.postDelayed(this,timeDelay);
 
+
             }
         };
 
@@ -128,7 +129,9 @@ public class MainActivity extends AppCompatActivity {
 
                     updateUIRunnable.run();
 
-
+                    if(sortAlgorithm.getCurrentStatus()== ArrayStatus.SORTED) {
+                        handler.removeCallbacks(updateUIRunnable);
+                    }
                 }
 
 
