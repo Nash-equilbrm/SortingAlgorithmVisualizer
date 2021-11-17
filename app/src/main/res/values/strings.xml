@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Algorithm Visualizer</string>
+    <string name="array_size">Array Size</string>
+    <string name="comparison_count">Comparisons</string>
+    <string name="shuffle">Shuffle</string>
+    <string name="sort">Sort</string>
+    <string name="array_start_size">10</string>
+</resources>
