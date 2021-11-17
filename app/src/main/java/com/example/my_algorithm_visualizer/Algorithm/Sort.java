@@ -22,11 +22,6 @@ public abstract class Sort {
         this.context = context;
     }
 
-    public Context getContext() {
-        return context;
-    }
-
-
     public ArrayStatus getCurrentStatus(){
         return currentStatus;
     }
