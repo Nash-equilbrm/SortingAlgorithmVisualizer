@@ -66,14 +66,27 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-    <SeekBar
-        android:id="@+id/seekbar"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:progress="@integer/array_start_size"
-        android:min="0"
-        android:max="@integer/array_max_size" />
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text="@string/array_size" />
+
+        <SeekBar
+            android:id="@+id/arraySizeSeekbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:max="@integer/array_max_size"
+            android:min="0"
+            android:progress="@integer/array_start_size" />
+
+    </LinearLayout>
+
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

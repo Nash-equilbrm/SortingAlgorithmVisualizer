@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        SeekBar seekBar = (SeekBar) findViewById(R.id.seekbar);
+        SeekBar arraySizeSeekBar = (SeekBar) findViewById(R.id.arraySizeSeekbar);
         TextView arraySizeDisplay = (TextView) findViewById(R.id.arraySizeDisplay);
         TextView comparisonCountDisplay = (TextView) findViewById(R.id.comparisonCountDisplay);
         Button shuffleButton = (Button) findViewById(R.id.shuffleButton);
@@ -42,10 +42,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Delay time in visualization
-        long timeDelay = 1; //  miliseconds
+        long timeDelay = 10; //  miliseconds
 
+
+
+
+        int currentSize = getResources().getInteger(R.integer.array_start_size);
         // set text for current defaut array size
-        arraySizeDisplay.setText(R.string.array_start_size);
+        arraySizeDisplay.setText(String.valueOf(getResources().getInteger(R.integer.array_start_size)));
         // Generate random integer array
         sortAlgorithm.randomArray(getResources().getInteger(R.integer.array_start_size));
         // state the default algorithm
@@ -55,14 +59,13 @@ public class MainActivity extends AppCompatActivity {
         // visualize array:
         arrayVisualizeView.visualize(sortAlgorithm.getArr());
 
-        // set listener on seekbar
-        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        // set listener on array size bar
+        arraySizeSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 arraySizeDisplay.setText(String.valueOf(i));
                 sortAlgorithm.randomArray(i);
                 arrayVisualizeView.visualize(sortAlgorithm.getArr());
-
             }
 
             @Override
@@ -78,6 +81,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
+
+
         // set listener on shuffle button: Make new array when pressed
         shuffleButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
                 if(sortAlgorithm.getCurrentStatus()==ArrayStatus.SORTED
                         || sortAlgorithm.getCurrentStatus()==ArrayStatus.NOT_SORTED) {
                     comparisonCountDisplay.setText("");
-                    sortAlgorithm.randomArray(seekBar.getProgress());
+                    sortAlgorithm.randomArray(arraySizeSeekBar.getProgress());
                     sortAlgorithm.setCurrentStatus(ArrayStatus.NOT_SORTED);
                     sortAlgorithm.setComparisonsCount(0);
                     arrayVisualizeView.shuffleRects(sortAlgorithm.getArr());
@@ -146,6 +152,7 @@ public class MainActivity extends AppCompatActivity {
         menu.add(getResources().getString(R.string.Selection_sort));
         menu.add(getResources().getString(R.string.Bubble_sort));
         menu.add(getResources().getString(R.string.Cocktail_sort));
+        menu.add(getResources().getString(R.string.Heap_sort));
         return super.onCreateOptionsMenu(menu);
     }
 

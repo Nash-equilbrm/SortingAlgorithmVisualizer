@@ -19,6 +19,9 @@ public class AlgorithmFactory {
             sort = new SelectionSort(context);
         else if (algo == context.getResources().getString(R.string.Cocktail_sort))
             sort = new CocktailSort(context);
+        else if (algo == context.getResources().getString(R.string.Heap_sort)){
+            sort = new HeapSort(context);
+        }
         return sort;
     }
 }

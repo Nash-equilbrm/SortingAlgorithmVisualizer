@@ -52,8 +52,6 @@ public class ArrayVisualizeView extends View {
 
     public void unfocusRect(int index){
         shapes.get(index).paint.setColor(Color.GREEN);
-
-
     }
 
     //Swap 2 rectangles on view
