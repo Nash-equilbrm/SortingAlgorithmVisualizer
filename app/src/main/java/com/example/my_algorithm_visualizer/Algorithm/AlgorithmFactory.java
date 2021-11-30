@@ -22,6 +22,9 @@ public class AlgorithmFactory {
         else if (algo == context.getResources().getString(R.string.Heap_sort)){
             sort = new HeapSort(context);
         }
+        else if (algo == context.getResources().getString(R.string.Insertion_sort)){
+            sort = new InsertionSort(context);
+        }
         return sort;
     }
 }

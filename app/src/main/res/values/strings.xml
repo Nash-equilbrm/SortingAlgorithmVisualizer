@@ -9,4 +9,5 @@
     <string name="Selection_sort">Selection sort</string>
     <string name="Cocktail_sort">Cocktail sort</string>
     <string name="Heap_sort">Heap sort</string>
+    <string name="Insertion_sort">Insertion sort</string>
 </resources>

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Delay time in visualization
-        long timeDelay = 10; //  miliseconds
+        long timeDelay = 5; //  miliseconds
 
 
 
@@ -65,6 +66,9 @@ public class MainActivity extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 arraySizeDisplay.setText(String.valueOf(i));
                 sortAlgorithm.randomArray(i);
+                sortAlgorithm.setCurrentStatus(ArrayStatus.NOT_SORTED);
+                sortAlgorithm.setComparisonsCount(0);
+                arrayVisualizeView.shuffleRects(sortAlgorithm.getArr());
                 arrayVisualizeView.visualize(sortAlgorithm.getArr());
             }
 
@@ -149,11 +153,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        menu.add(getResources().getString(R.string.Selection_sort));
-        menu.add(getResources().getString(R.string.Bubble_sort));
-        menu.add(getResources().getString(R.string.Cocktail_sort));
-        menu.add(getResources().getString(R.string.Heap_sort));
-        return super.onCreateOptionsMenu(menu);
+//        menu.add(getResources().getString(R.string.Selection_sort));
+//        menu.add(getResources().getString(R.string.Bubble_sort));
+//        menu.add(getResources().getString(R.string.Cocktail_sort));
+//        menu.add(getResources().getString(R.string.Heap_sort));
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.algorithms,menu);
+        return true;
     }
 
     @Override

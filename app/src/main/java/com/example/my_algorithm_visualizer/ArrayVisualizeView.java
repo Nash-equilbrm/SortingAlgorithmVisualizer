@@ -60,10 +60,14 @@ public class ArrayVisualizeView extends View {
         tmpy = shapes.get(i).P2.y;
         shapes.get(i).P2.y = shapes.get(j).P2.y;
         shapes.get(j).P2.y = tmpy;
-        //this.invalidate();
 
-        //sleepFor(getContext().getResources().getInteger(R.integer.time_delay));
+    }
 
+    //Set value for rect
+    public void setRectValue(int pos, int val){
+        shapes.get(pos).P2.y = (int)(val*viewHeight/this.getContext()
+                .getResources()
+                .getInteger(R.integer.array_max_size));
     }
 
     private void initRects(int[] arr) {
